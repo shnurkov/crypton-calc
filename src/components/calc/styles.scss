@@ -1,0 +1,23 @@
+@import '../../index.scss';
+
+.calc {
+  &__tabs {
+    display: flex;
+    padding: 0 16px;
+    border-bottom: 1px solid #E4E4E4;
+
+    &__tab {
+      padding: 16px 48px;
+      cursor: pointer;
+      flex: 1;
+
+      &--active {
+        border-bottom: 3px solid $blue;
+      }
+    }
+  }
+  &__row{
+    margin-top: 34px;
+    padding: 0 15px;
+  }
+}
