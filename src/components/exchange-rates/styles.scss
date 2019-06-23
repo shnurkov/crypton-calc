@@ -1,6 +1,9 @@
 @import '../../index.scss';
 
 .exchange-rates {
+	@media (min-height: 935px){
+		display: block !important;
+	}
 	width: 100%;
 
 	&__row {

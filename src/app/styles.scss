@@ -35,6 +35,7 @@ body {
 		margin-bottom: 15px;
 
 		h1 {
+			display: inline-block;
 			font-size: 20px;
 			font-style: normal;
 			font-weight: normal;
@@ -43,6 +44,29 @@ body {
 			margin: 0;
 			margin-left: 35px;
 			margin-bottom: 15px;
+		}
+	}
+	&__rates{
+		h1{
+			position: relative;
+		}
+		&__openCloseBtn{
+			transition: all 0.5s;
+			display: none;
+			width: 10px;
+			height: 7px;
+			background: url('../assets/arrow-select.svg') no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: 14px;
+			right: -16px;
+			cursor: pointer;
+			@media (max-height: 935px){
+				display: block;
+			}
+			&--close{
+				transform: rotate(180deg);
+			}
 		}
 	}
 }

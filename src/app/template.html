@@ -1,11 +1,16 @@
 <div class="app">
   <div class="app__cross"></div>
-  <div class="app__block">
-    <h1>Exchange rates</h1>
-    <ExchangeRates :rate="rate" v-for="rate in rates" :key="rate.id"/>
+  <div class="app__block app__rates">
+    <h1>Exchange rates
+      <span
+      class="app__rates__openCloseBtn"
+      :class="{'app__rates__openCloseBtn--close': showRates}"
+      @click="handleOpenCloseRates()"></span>
+    </h1>
+    <ExchangeRates :rate="rate" v-for="rate in rates" :key="rate.id" v-show="showRates"/>
   </div>
-  <div class="app__block">
+  <div class="app__block app__calc">
     <h1>Calculators</h1>
-    <Calc />
+    <Calc/>
   </div>
 </div>

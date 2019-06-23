@@ -5,7 +5,18 @@ export default {
   name: 'app',
   data: function () {
     return {
-      rates: api
+      rates: api,
+      showRates: false
+    }
+  },
+  mounted () {
+    if (window.innerHeight > 935) {
+      this.showRates = true
+    }
+  },
+  methods: {
+    handleOpenCloseRates () {
+      this.showRates = !this.showRates
     }
   },
   components: {
