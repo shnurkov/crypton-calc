@@ -1,7 +1,13 @@
 <div class="calc">
   <div class="calc__tabs">
-    <div class="calc__tabs__tab" :class="{'calc__tabs__tab--active' : activeTab == 0}" @click="handleTab(0)">Loan</div>
-    <div class="calc__tabs__tab" :class="{'calc__tabs__tab--active' : activeTab == 1}" @click="handleTab(1)">Сurrency
+    <div
+    class="calc__tabs__tab"
+    :class="{'calc__tabs__tab--active' : activeTab == 0}"
+    @click="handleTab(0)">Loan</div>
+    <div
+    class="calc__tabs__tab"
+    :class="{'calc__tabs__tab--active' : activeTab == 1}"
+    @click="handleTab(1)">Сurrency
     </div>
   </div>
   <div class="calc__loan" v-if="activeTab == 0 && !showResults">
@@ -37,7 +43,7 @@
     </div>
     <div class="calc__results__row">
         <div class="calc__results__name">Amount give away</div>
-        <div class="calc__results__value">$ 87 000</div>
+        <div class="calc__results__value--red">$ 87 000</div>
     </div>
     <div class="calc__results__row">
       <div class="calc__results__name">Term</div>

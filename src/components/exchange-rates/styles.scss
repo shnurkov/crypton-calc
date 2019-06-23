@@ -1,56 +1,57 @@
 @import '../../index.scss';
 
 .exchange-rates {
-  width: 100%;
-  margin-bottom: 38px;
+	width: 100%;
 
-  &__row {
-    height: 48px;
-    padding: 0 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #525B65;
-    font-weight: 600;
-    font-size: 17px;
+	&__row {
+		height: 35px;
+		padding: 0 35px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #525b65;
+		font-weight: 600;
+		font-size: 17px;
+	}
+	&:nth-child(even) {
+		background-color: #f5f6f7;
+	}
 
-    &:nth-child(odd) {
-      background-color: #F5F6F7;
-    }
-  }
+	&__count {
+		&__currency {
+			font-weight: normal;
+			opacity: 0.7;
+			text-transform: uppercase;
+			font-size: 12px;
+		}
+	}
 
-  &__count {
+	&__price {
+		display: flex;
+		align-items: baseline;
 
-    &__currency {
-      font-weight: normal;
-      opacity: 0.7;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-  }
+		&__arrow-up,
+		&__arrow-down {
+			margin-right: 9px;
+			width: 8px;
+			height: 11px;
+		}
 
-  &__price {
-    display: flex;
-    align-items: baseline;
+		&__arrow-up {
+			background: url('../../assets/arrow-up.svg') no-repeat;
+			background-size: contain;
+		}
+		&__arrow-down {
+			background: url('../../assets/arrow-down.svg') no-repeat;
+			background-size: contain;
+		}
 
-    &__arrow-up,
-    &__arrow-down {
-      margin-right: 9px;
-      width: 8px;
-      height: 11px;
-    }
-
-    &__arrow-up {
-      background: url('../../assets/arrow-up.svg') no-repeat;
-      background-size: contain;
-    }
-
-    &__currency {
-      font-weight: normal;
-      opacity: 0.7;
-      text-transform: uppercase;
-      font-size: 12px;
-      margin-left: 5px;
-    }
-  }
+		&__currency {
+			font-weight: normal;
+			opacity: 0.7;
+			text-transform: uppercase;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+	}
 }

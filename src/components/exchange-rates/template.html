@@ -1,11 +1,11 @@
 <div class="exchange-rates">
   <div class="exchange-rates__row">
     <div class="exchange-rates__count">
-      1 <span class="exchange-rates__count__currency">btc</span>
+      1 <span class="exchange-rates__count__currency">{{rate.currency}}</span>
     </div>
     <div class="exchange-rates__price">
-      <div class="exchange-rates__price__arrow-up"></div>
-      8234,95 <span class="exchange-rates__price__currency">usd</span>
+      <div :class="`exchange-rates__price__arrow-${rate.value_vector}`"></div>
+      {{rate.cost}} <span class="exchange-rates__price__currency">usd</span>
     </div>
   </div>
 </div>

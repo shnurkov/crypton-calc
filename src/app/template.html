@@ -2,7 +2,7 @@
   <div class="app__cross"></div>
   <div class="app__block">
     <h1>Exchange rates</h1>
-    <ExchangeRates />
+    <ExchangeRates :rate="rate" v-for="rate in rates" :key="rate.id"/>
   </div>
   <div class="app__block">
     <h1>Calculators</h1>

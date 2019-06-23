@@ -1,7 +1,7 @@
 <div class="field">
   <label for="term">{{label}}</label>
     <div :class="`field__wrap field__wrap--${mode}`">
-      <input type="text" id="term">
+      <input type="number" id="term">
       <select v-if="select">
         <option v-for="option in select" :value="option">{{option}}</option>
       </select>
