@@ -4,7 +4,7 @@
     <div class="calc__tabs__tab" :class="{'calc__tabs__tab--active' : activeTab == 1}" @click="handleTab(1)">Сurrency
     </div>
   </div>
-  <div class="calc__loan" v-if="activeTab == 0">
+  <div class="calc__loan" v-if="activeTab == 0 && !showResults">
       <div class="calc__row">
           <Field label="Amount" :select="['BTC', 'ETH']" mode="currency"/>
       </div>
@@ -14,6 +14,51 @@
       <div class="calc__row">
         <Field label="Rate of year" mode="percent"/>
       </div>
+      <div class="calc__row calc_pledge">
+        <label class="calc__pledge__label">Pledge</label>
+        <div class="calc__pledge__wrap" v-for="item in pledge">
+          <div class="calc__pledge__label-wrap">
+            <div class="calc__pledge__currency">{{item.label}}</div>
+            <div class="calc__pledge__value">{{item.value}}</div>
+         </div>
+          <VueSlider v-model="item.value" v-bind="{...defaultRangeOptions, ...item.options}"/>
+        </div>
+      </div>
+      <div class="calc__row calc__buttons">
+        <button class="calc__calculateBtn" @click="calculate()">Calculate</button>
+        <button class="calc__resetBtn">Reset</button>
+      </div>
+  </div>
+  <div class="calc__results" v-if="showResults && activeTab == 0">
+    <h2>Calculation results:</h2>
+    <div class="calc__results__row">
+        <div class="calc__results__name">Amount are getting</div>
+        <div class="calc__results__value">$ 67 000</div>
+    </div>
+    <div class="calc__results__row">
+        <div class="calc__results__name">Amount give away</div>
+        <div class="calc__results__value">$ 87 000</div>
+    </div>
+    <div class="calc__results__row">
+      <div class="calc__results__name">Term</div>
+      <div class="calc__results__value">150 Days</div>
+    </div>
+    <div class="calc__results__row">
+        <div class="calc__results__name">Rate of year</div>
+        <div class="calc__results__value">10%</div>
+    </div>
+    <div class="calc__results__row">
+      <div class="calc__results__name">Pledge</div>
+      <div class="calc__results__value">0,09456212 BTC<br>1,00466790 ETH</div>
+    </div>
+    <div class="calc__results__row">
+      <div class="calc__results__name">Monthly payment</div>
+      <div class="calc__results__value">$ 950</div>
+    </div>
+    <div class="calc__row calc__buttons">
+        <button class="calc__calculateBtn" @click="edit()">Edit</button>
+    </div>
+
   </div>
   <div class="calc__currency" v-if="activeTab == 1">
       <div class="calc__row">
@@ -24,6 +69,9 @@
       </div>
       <div class="calc__row">
           <Field label="Currency 2" :select="['USD', 'RUB']" mode="currency"/>
+      </div>
+      <div class="calc__row calc__buttons">
+          <button class="calc__resetBtn">Reset</button>
       </div>
   </div>
 </div>
