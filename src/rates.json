@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "currency": "BTC",
+    "cost": "8234,95",
+    "value_vector": "up"
+  },
+  {
+    "id": 2,
+    "currency": "ETH",
+    "cost": "255,17",
+    "value_vector": "down"
+  },
+  {
+    "id": 3,
+    "currency": "TUSD",
+    "cost": "0,99",
+    "value_vector": "up"
+  },
+  {
+    "id": 4,
+    "currency": "USDT",
+    "cost": "1,00",
+    "value_vector": "up"
+  },
+  {
+    "id": 5,
+    "currency": "FWX",
+    "cost": "0,23",
+    "value_vector": "down"
+  }
+]
