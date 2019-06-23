@@ -1,10 +1,10 @@
-<div class="input">
+<div class="field">
   <label for="term">{{label}}</label>
-    <div :class="`input__wrap input__wrap--${mode}`">
+    <div :class="`field__wrap field__wrap--${mode}`">
       <input type="text" id="term">
       <select v-if="select">
         <option v-for="option in select" :value="option">{{option}}</option>
       </select>
-      <div class="input__select-arrow" v-if="select"></div>
+      <div class="field__select-arrow" v-if="select"></div>
     </div>
 </div>

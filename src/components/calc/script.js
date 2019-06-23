@@ -1,4 +1,4 @@
-import Input from '../ui/input/input'
+import Field from '../ui/input/input'
 
 export default {
   name: 'calc',
@@ -13,6 +13,6 @@ export default {
     }
   },
   components: {
-    Input
+    Field
   }
 }

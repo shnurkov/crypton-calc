@@ -4,13 +4,26 @@
     <div class="calc__tabs__tab" :class="{'calc__tabs__tab--active' : activeTab == 1}" @click="handleTab(1)">Сurrency
     </div>
   </div>
-  <div class="calc__row">
-    <Input label="Amount" :select="['BTC', 'ETH']" mode="currency"/>
+  <div class="calc__loan" v-if="activeTab == 0">
+      <div class="calc__row">
+          <Field label="Amount" :select="['BTC', 'ETH']" mode="currency"/>
+      </div>
+      <div class="calc__row">
+        <Field label="Term" :select="['Days', 'Weeks']" mode="time"/>
+      </div>
+      <div class="calc__row">
+        <Field label="Rate of year" mode="percent"/>
+      </div>
   </div>
-  <div class="calc__row">
-    <Input label="Term" :select="['Days', 'Weeks']" mode="time"/>
-  </div>
-  <div class="calc__row">
-    <Input label="Rate of year" mode="percent"/>
+  <div class="calc__currency" v-if="activeTab == 1">
+      <div class="calc__row">
+          <Field label="Currency 1" :select="['BTC', 'ETH']" mode="currency"/>
+      </div>
+      <div class="calc__row">
+        <button class="calc__currency__revertBtn"></button>
+      </div>
+      <div class="calc__row">
+          <Field label="Currency 2" :select="['USD', 'RUB']" mode="currency"/>
+      </div>
   </div>
 </div>

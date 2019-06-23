@@ -1,5 +1,5 @@
 export default {
-  name: 'input',
+  name: 'field',
   props: ['label', 'select', 'mode'],
   data: function () {
     return {
